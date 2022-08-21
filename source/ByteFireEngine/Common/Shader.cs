@@ -140,8 +140,16 @@ public class Shader
     /// <param name="data">The data to set</param>
     public void SetInt(string name, int data)
     {
-        GL.UseProgram(Handle);
-        GL.Uniform1(_uniformLocations[name], data);
+        try
+        {
+            GL.UseProgram(Handle);
+            GL.Uniform1(_uniformLocations[name], data);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+
     }
 
     /// <summary>

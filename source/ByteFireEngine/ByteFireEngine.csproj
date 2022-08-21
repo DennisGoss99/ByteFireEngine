@@ -15,9 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\Shaders\lighting.frag">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Assets\Shaders\shader.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
