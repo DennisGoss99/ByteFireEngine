@@ -101,13 +101,15 @@ namespace ByteFireEngine
         {
             base.OnLoad();
 
-            mesh = new Mesh(vertices,
-                //indexArray,
-                new[] {
-                    new VertexAttribute(3, VertexAttribPointerType.Float, 8 * sizeof(float), 0),
-                    new VertexAttribute(3, VertexAttribPointerType.Float, 8 * sizeof(float), 3 * sizeof(float)),
-                    new VertexAttribute(2, VertexAttribPointerType.Float, 8 * sizeof(float), 6 * sizeof(float)),
-                });
+            mesh = ModelLoader.LoadStlFile("C:\\Users\\Merdo\\Desktop\\ape.stl");
+
+            //mesh = new Mesh(vertices,
+            //    //indexArray,
+            //    new[] {
+            //        new VertexAttribute(3, VertexAttribPointerType.Float, 8 * sizeof(float), 0),
+            //        new VertexAttribute(3, VertexAttribPointerType.Float, 8 * sizeof(float), 3 * sizeof(float)),
+            //        new VertexAttribute(2, VertexAttribPointerType.Float, 8 * sizeof(float), 6 * sizeof(float)),
+            //    });
 
             GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
