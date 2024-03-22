@@ -101,7 +101,7 @@ namespace ByteFireEngine
         {
             base.OnLoad();
 
-            mesh = ModelLoader.LoadStlFile("C:\\Users\\Merdo\\Desktop\\ape.stl");
+            mesh = ModelLoader.LoadStlFile("../../misc/ape_acsii.stl");
 
             //mesh = new Mesh(vertices,
             //    //indexArray,
