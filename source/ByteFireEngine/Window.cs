@@ -103,7 +103,6 @@ namespace ByteFireEngine
 
             
             mesh = ModelLoader.LoadFile("../../misc/ape.obj");
-            mesh1 = ModelLoader.LoadFile("../../misc/ape.stl");
 
             //mesh = new Mesh(vertices,
             //    //indexArray,
@@ -159,10 +158,6 @@ namespace ByteFireEngine
             shader.SetMatrix4("projection", camera.GetProjectionMatrix());
             
             mesh.Render();
-
-            mesh1.Render();
-
-            mesh1
             
             SwapBuffers();
         }
