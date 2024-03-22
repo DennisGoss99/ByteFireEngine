@@ -95,13 +95,15 @@ namespace ByteFireEngine
 
         private Vector2 lastPos;
 
-        private Mesh mesh;
+        private Mesh mesh, mesh1;
 
         protected override void OnLoad()
         {
             base.OnLoad();
 
-            mesh = ModelLoader.LoadFile("../../misc/ape_ascii.stl");
+            
+            mesh = ModelLoader.LoadFile("../../misc/ape.obj");
+            mesh1 = ModelLoader.LoadFile("../../misc/ape.stl");
 
             //mesh = new Mesh(vertices,
             //    //indexArray,
@@ -157,6 +159,10 @@ namespace ByteFireEngine
             shader.SetMatrix4("projection", camera.GetProjectionMatrix());
             
             mesh.Render();
+
+            mesh1.Render();
+
+            mesh1
             
             SwapBuffers();
         }
