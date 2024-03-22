@@ -12,6 +12,17 @@ namespace ByteFireEngine.Common.Mesh;
 
 public static class ModelLoader
 {
+    public static Mesh LoadFile(string path){
+        string extension = Path.GetExtension(path).ToLower();
+
+        return extension switch
+        {
+            ".obj" => LoadObjFile(path),
+            ".stl" => LoadStlFile(path),
+            _ => throw new ArgumentException($"File extension '{extension}' is not supported"),
+        };
+    }
+
     public static Mesh LoadObjFile(string path)
     {
         var linePos = 0;
@@ -87,18 +98,12 @@ public static class ModelLoader
                 break;
             case 2:
 
-
-
-
                 break;
         }
 
         foreach (var s in faceData)
         {
             var facePoints = s.Split(' ');
-
-                
-
         }
 
         return new Mesh(new float[] { }, new VertexAttribute[] { });
@@ -110,7 +115,8 @@ public static class ModelLoader
 
         using StreamReader reader = new StreamReader(path);
         reader.Read(buffer, 0, 5);
-
+        reader.Close();
+        
         if ("solid".Equals(new string(buffer), StringComparison.Ordinal))
             return StlModelLoader.LoadNonBinaryFile(path);
 
